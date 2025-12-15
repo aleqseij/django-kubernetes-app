@@ -86,7 +86,7 @@ jobs:
         # Применяем манифесты
         kubectl apply -f k8s-manifests/ -n ${{ env.K8S_NAMESPACE }}
         
-        # Обновляем образ в deployment
+        # Обновляем образ в deployment  
         kubectl set image deployment/django-deployment django-app=ghcr.io/fiercesponge703/django-kubernetes-app:latest -n django-app
         
         # Ждем пока поды перезапустятся
